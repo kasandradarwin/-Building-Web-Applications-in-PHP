@@ -59,7 +59,6 @@ print(perimeter("rodger.png"));
 
 //Exercise 5 - Print the RGB values of a pixel
 
-
 function printPixel(nameImage, xpos, ypos) {
     var someImage = new SimpleImage(nameImage) ;
     print("red is " + someImage.getRed(xpos,ypos));
@@ -69,3 +68,77 @@ function printPixel(nameImage, xpos, ypos) {
 
 printPixel("drewgreen.png",10, 10);
 printPixel("drewgreen.png",250, 500);
+
+//Exercise 6 - Sum of the RGB values for a Pixel
+
+function sumPixel(nameOfImage, xpos, ypos) ;
+    var image = new SimpleImage(nameOfImage);
+    var colourred = nameOfImage.getRed(xpos,ypos);
+    var colourgreen = nameOfImage.getGreen(xpos,ypos);
+    var colourblue = nameOfImage.getBlue(xpos,ypos);
+
+    var sum = colourred + colourgreen + colourblue
+
+    return(sum)
+
+}
+
+var answer = sumPixel("drewgreen.png", 250, 500);
+print(answer);
+answer = sumPixel("drewgreen.png",10, 10);
+print(answer);
+
+//
+// write your code here
+
+var pixel = new SimpleImage(200,200);
+ for (var colourChange of pixel.values()){
+     var Green = 255 - colourChange.getGreen();
+     var Red = 255 - colourChange.getRed();
+     colourChange.setGreen(Green)
+     colourChange.setRed(Red)
+ }
+
+
+// Create a 200 x 200 pixel and make it yellow
+
+var pixel = new SimpleImage(200,200);
+ for (var colourChange of pixel.values()){
+     var Green = 255 - colourChange.getGreen();
+     var Red = 255 - colourChange.getRed();
+     colourChange.setGreen(Green)
+     colourChange.setRed(Red)
+ }
+
+
+print(pixel);
+
+//Looping
+
+// Exercise 1 - Turn the chapel red
+
+var pixel = new SimpleImage("chapel.png");
+ for (var colourChange of pixel.values()){
+     var red = 255 + colourChange.getRed();
+     colourChange.setRed(red)
+ }
+
+
+print(pixel);
+
+// Exercise 2 - Remove all the red
+
+var pixel = new SimpleImage("chapel.png");
+ for (var colourChange of pixel.values()){
+     var green = 0 + colourChange.getGreen();
+     var blue = 0 + colourChange.getBlue();
+     var red = 0 - colourChange.getRed();
+     colourChange.setGreen(green)
+     colourChange.setBlue(blue)
+     colourChange.setRed(red)
+ }
+
+
+print(pixel);
+
+// Exercise 3 - Turn the eggs less red
